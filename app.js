@@ -20,3 +20,4 @@ const lastCar = cars.pop(); //удаляет последнее значение
 console.log(firstCar); //есть возможность поработать с удаляемым значением
 console.log(lastCar);
 console.log(cars);
+// не работет git!
