@@ -60,12 +60,47 @@ const people = [
 // console.log(person);
 
 // Тоже что выше только через цикл for of
-let findedPerson;
-for (const person of people) {
-  console.log(person); //выводим всех на экран
-  if (person.budget === 3500) {
-    findedPerson = person;
-  }
-}
-console.log("findedPerson");
-console.log(findedPerson); //3.26.46
+// let findedPerson;
+// for (const person of people) {
+//   console.log(person); //выводим всех на экран
+//   if (person.budget === 3500) {
+//     findedPerson = person;
+//   }
+// }
+// console.log("findedPerson");
+// console.log(findedPerson); //3.26.46
+
+// let findedPerson;
+// for (const person of people) {
+//   console.log(person); //выводим всех на экран
+//   if (person.budget === 3500) {
+//     findedPerson = person;
+//   }
+// }
+// console.log("findedPerson");
+// console.log(findedPerson); //3.26.46
+
+// const person = people.find((person) => person.budget === 3500); // лямбда код*
+// console.log(person);
+
+// console.log(cars.includes("Мазда")); // проверяет наличие элемента. boolean
+
+const upperCaseCars = cars.map((car) => {
+  // .map создает новый массив
+  return car.toUpperCase();
+});
+console.log(upperCaseCars);
+console.log(cars); // остался без изменения
+
+// const pow2Fib = fib.map((num) => num ** 2); // возводим в квадрат массив фибоначи
+// const pow2 = (num) => num ** 2; // функция
+// const sqrt = (num) => Math.sqrt(num);
+// const pow2Fib = fib.map(pow2); //предаем а не вызываем функциию pow2
+// console.log(pow2Fib);
+
+const pow2 = (num) => num ** 2; // функция
+// const sqrt = (num) => Math.sqrt(num);
+// const pow2Fib = fib.map(pow2).map(sqrt); //предаем а не вызываем функциию pow2 затем берем квадратный корень
+
+const pow2Fib = fib.map(pow2).map(Math.sqrt); // или
+console.log(pow2Fib); //3.34.51
