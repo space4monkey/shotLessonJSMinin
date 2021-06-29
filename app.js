@@ -41,21 +41,48 @@ console.log(heading4);
 
 const heading = document.getElementById("hello");
 setTimeout(() => {
-  addStylesTo(heading);
+  addStylesTo(heading, (text = "JavaScript"));
 }, 1000);
 
 setTimeout(() => {
-  addStylesTo(heading2);
+  addStylesTo(heading2, (text = "Тренеруйся"), (color = "yellow")), "0";
 }, 1500);
 
 setTimeout(() => {
-  addStylesTo(heading3);
+  addStylesTo(heading3, (text = "И все получится"), (color = "blue"), "3rem");
 }, 2000);
 
-function addStylesTo(node) {
-  node.textContent = "Changed from JavaScript!";
-  node.style.color = "red";
+function addStylesTo(node, text, color = "red", fontSize) {
+  node.textContent = text;
+  node.style.color = color;
   node.style.textAlign = "center";
   node.style.backgroundColor = "green";
   node.style.padding = "2rem";
+  // falsy: '', undefined, null, 0, false
+  if (fontSize) {
+    node.style.fontSize = fontSize;
+  }
 }
+
+heading.onclick = () => {
+  // Меняем цвет background и color по клику
+  console.log("click");
+  if (heading.style.color === "red") {
+    heading.style.color = "#000";
+    heading.style.backgroundColor = "#fff";
+  } else {
+    heading.style.color = "red";
+    heading.style.backgroundColor = "green";
+  }
+};
+
+heading2.addEventListener("dblclick", () => {
+  console.log("click");
+  if (heading2.style.color === "yellow") {
+    heading2.style.color = "#000";
+    heading2.style.backgroundColor = "#fff";
+  } else {
+    heading2.style.color = "yellow";
+    heading2.style.backgroundColor = "green";
+  }
+});
